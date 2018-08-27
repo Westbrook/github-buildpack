@@ -16,7 +16,7 @@ export_env_dir "$ENV_DIR"
 [[ !  -z  $GITHUB_AUTH_TOKEN  ]] && echo "There's a github auth token"
 
 echo "" >> $BUILD_DIR/.netrc
-echo "machine https://github.com
+echo "machine github.com
 login lingolive-tech
 password $GITHUB_AUTH_TOKEN" >> $BUILD_DIR/.netrc
 git clone https://github.com/lingolive/answer-submission.git
