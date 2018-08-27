@@ -21,7 +21,7 @@ login lingolive-tech
 password $GITHUB_AUTH_TOKEN
 protocol https" >> $BUILD_DIR/.netrc
 
-chmod 0600 $BUILD_DIR/.netrc
+chmod 777 $BUILD_DIR/.netrc
 # gpg --encrypt --armor --recipient tech@lingolive.com $BUILD_DIR/.netrc
 git config --global credential.helper "$BUILD_DIR/.netrc"
 
