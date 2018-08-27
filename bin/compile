@@ -19,6 +19,5 @@ echo "" >> $BUILD_DIR/.netrc
 echo "machine https://github.com
 login lingolive-tech
 password $GITHUB_AUTH_TOKEN" >> $BUILD_DIR/.netrc
-git config --global credential.helper $BUILD_DIR/.netrc
 git clone https://github.com/lingolive/answer-submission.git
 echo "<------ you made it this far!! ------->"
