@@ -17,5 +17,6 @@ export_env_dir "$ENV_DIR"
 
 echo "" >> $BUILD_DIR/.netrc
 echo "machine github.com login lingolive-tech password $GITHUB_AUTH_TOKEN protocol https" >> $BUILD_DIR/.netrc
+git config --global credential.helper "netrc -f ~/.netrc.asc -v"
 git clone https://github.com/lingolive/answer-submission.git
 echo "<------ you made it this far!! ------->"
