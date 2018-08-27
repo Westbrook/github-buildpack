@@ -13,7 +13,7 @@ BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 source $BP_DIR/lib/environment.sh
 export_env_dir "$ENV_DIR"
 
-echo "" >> $BUILD_DIR/.netrc
+touch $BUILD_DIR/.netrc
 echo "machine https://github.com login $GITHUB_AUTH_TOKEN protocol https" >> $BUILD_DIR/.netrc
 
 chmod 777 $BUILD_DIR/.netrc
