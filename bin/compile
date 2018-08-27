@@ -13,10 +13,8 @@ BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 source $BP_DIR/lib/environment.sh
 export_env_dir "$ENV_DIR"
 
-[[ !  -z  $GITHUB_AUTH_TOKEN  ]] && echo "There's a github auth token"
-
 echo "" >> $BUILD_DIR/.netrc
-echo "machine https://github.com login lingolive-tech password $GITHUB_AUTH_TOKEN protocol https" >> $BUILD_DIR/.netrc
+echo "machine https://github.com login $GITHUB_AUTH_TOKEN protocol https" >> $BUILD_DIR/.netrc
 
 chmod 777 $BUILD_DIR/.netrc
 # gpg --encrypt --armor --recipient tech@lingolive.com $BUILD_DIR/.netrc
