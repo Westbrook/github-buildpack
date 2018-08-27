@@ -18,7 +18,7 @@ export_env_dir "$ENV_DIR"
 
 # chmod 777 $BUILD_DIR/.netrc
 # git config --global credential.helper "store --file $BUILD_DIR/.netrc"
-git config --global credential.helper 'store --file $BUILD_DIR/.my-credentials'
+git config --global credential.helper "store --file $BUILD_DIR/.my-credentials"
 echo "protocol=https
 host=github.com
 username=lingolive-tech
