@@ -13,12 +13,17 @@ BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 source $BP_DIR/lib/environment.sh
 export_env_dir "$ENV_DIR"
 
-printf "machine github.com\nlogin lingolive-tech\npassword $GITHUB_AUTH_TOKEN\nprotocol https\n" >> $BUILD_DIR/.netrc
-cat $BUILD_DIR/.netrc
+# printf "machine github.com\nlogin lingolive-tech\npassword $GITHUB_AUTH_TOKEN\nprotocol https\n" >> $BUILD_DIR/.netrc
+# cat $BUILD_DIR/.netrc
 
-chmod 777 $BUILD_DIR/.netrc
-# gpg --encrypt --armor --recipient tech@lingolive.com $BUILD_DIR/.netrc
-git config --global credential.helper "store --file $BUILD_DIR/.netrc"
+# chmod 777 $BUILD_DIR/.netrc
+# git config --global credential.helper "store --file $BUILD_DIR/.netrc"
+
+git credential-store --file ~/.my-credentials store
+echo "protocol=https"
+echo "host=github.com"
+echo "username=lingolive-tech"
+echo "password=$GITHUB_AUTH_TOKEN"
 
 git clone https://github.com/lingolive/answer-submission.git
 echo "<------ you made it this far!! ------->"
