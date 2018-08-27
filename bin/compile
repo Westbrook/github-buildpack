@@ -18,7 +18,7 @@ cat $BUILD_DIR/.netrc
 
 chmod 777 $BUILD_DIR/.netrc
 # gpg --encrypt --armor --recipient tech@lingolive.com $BUILD_DIR/.netrc
-git config --global credential.helper "$BUILD_DIR/.netrc"
+git config --global credential.helper "--file $BUILD_DIR/.netrc"
 
 git clone https://github.com/lingolive/answer-submission.git
 echo "<------ you made it this far!! ------->"
