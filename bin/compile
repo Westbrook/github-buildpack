@@ -13,7 +13,7 @@ BP_DIR=$(cd $(dirname ${0:-}); cd ..; pwd)
 source $BP_DIR/lib/environment.sh
 export_env_dir "$ENV_DIR"
 
-printf "machine github.com\nlogin lingolive-tech\npassword $GITHUB_AUTH_TOKEN\nprotocol https" >> $BUILD_DIR/.netrc
+printf "machine github.com\nlogin lingolive-tech\npassword $GITHUB_AUTH_TOKEN\nprotocol https\n" >> $BUILD_DIR/.netrc
 cat $BUILD_DIR/.netrc
 
 chmod 777 $BUILD_DIR/.netrc
