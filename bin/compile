@@ -22,6 +22,7 @@ password $GITHUB_AUTH_TOKEN
 protocol https" >> $BUILD_DIR/.netrc
 
 chmod 0600 $BUILD_DIR/.netrc
+git config --global credential.helper $BUILD_DIR/.netrc
 
 git clone https://github.com/lingolive/answer-submission.git
 echo "<------ you made it this far!! ------->"
