@@ -24,6 +24,7 @@ echo "protocol=https"
 echo "host=github.com"
 echo "username=lingolive-tech"
 echo "password=$GITHUB_AUTH_TOKEN"
+echo ""
 
 git clone https://github.com/lingolive/answer-submission.git
 echo "<------ you made it this far!! ------->"
