@@ -19,12 +19,10 @@ export_env_dir "$ENV_DIR"
 # chmod 777 $BUILD_DIR/.netrc
 # git config --global credential.helper "store --file $BUILD_DIR/.netrc"
 git config --global credential.helper 'store --file $BUILD_DIR/.my-credentials'
-git credential-store --file $BUILD_DIR/.my-credentials store
 echo "protocol=https"
-echo "host=github.com"
-echo "username=lingolive-tech"
-# echo "password=$GITHUB_AUTH_TOKEN"
-echo ""
+host=github.com"
+username=lingolive-tech"
+password=$GITHUB_AUTH_TOKEN" >> $BUILD_DIR/.my-credentials
 
 git clone https://github.com/lingolive/answer-submission.git
 echo "<------ you made it this far!! ------->"
